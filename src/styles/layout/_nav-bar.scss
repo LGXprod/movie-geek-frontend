@@ -1,0 +1,35 @@
+@use "../sass-utils/variables" as *;
+@use "../sass-utils/classes" as *;
+
+.nav-bar {
+  background-color: $bgColor2;
+  width: 100%;
+  padding: 20px 0;
+
+  & > div {
+    @extend .content-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    span {
+      &:first-child {
+        color: $fgColor2;
+      }
+  
+      &:last-child {
+        color: $fgColor3;
+      }
+    }
+  }
+}
+
+

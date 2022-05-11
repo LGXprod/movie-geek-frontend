@@ -1,0 +1,15 @@
+@use "../sass-utils/variables" as *;
+@use "../sass-utils/classes" as *;
+
+.movie-geek-info {
+  width: 100%;
+  padding: 60px 0;
+
+  & > div {
+    @extend .content-width;
+  }
+
+  &:nth-child(2n+1) {
+    background-color: $bgColor2;
+  }
+}

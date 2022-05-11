@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #151426;
+  color: #F2F2F2;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 92px;
+  background: rgb(128, 145, 242);
+  background: linear-gradient(320deg, rgb(128, 145, 242) 0%, rgb(242, 107, 220) 35%, rgb(128, 145, 242) 75%, rgb(242, 107, 220) 100%);
+}
+
+h2 {
+  font-size: 64px;
+  color: #F26BDC;
+}
+
+h3 {
+  font-size: 37px;
+  color: #F26BDC;
+}
+
+h4,
+h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 29px;
+}
+
+h5 {
+  font-size: 23px;
+}
+
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #8091F2;
+  opacity: 0.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content-width, .movie-geek-info > div, .nav-bar > div {
+  max-width: 1200px;
+}
+
+.nav-bar {
+  background-color: #231B40;
+  width: 100%;
+  padding: 20px 0;
+}
+.nav-bar > div {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-bar > div div {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-bar > div span:first-child {
+  color: #F26BDC;
+}
+.nav-bar > div span:last-child {
+  color: #8091F2;
+}
+
+.movie-geek-info {
+  width: 100%;
+  padding: 60px 0;
+}
+.movie-geek-info:nth-child(2n+1) {
+  background-color: #231B40;
+}
+
+/*# sourceMappingURL=styles.css.map */
