@@ -1,0 +1,22 @@
+@use "../sass-utils/variables" as *;
+@use "../sass-utils/classes" as *;
+@use "../sass-utils/mixins" as *;
+
+.footer {
+  background-color: $mgColor;
+  padding: 60px 0;
+
+  & > div {
+    @extend .content-width;
+    margin: 0 auto;
+    @include center(column, center, center, 10px);
+
+    .resources {
+      @include center(row, center, center);
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

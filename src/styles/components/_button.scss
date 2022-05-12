@@ -1,0 +1,20 @@
+@use "../sass-utils/variables" as *;
+
+.btn {
+  display: inline-block;
+  background-color: $mgColor;
+  border-radius: 10px;
+  padding: 10px 25px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $fgColor3;
+  }
+
+  label {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}

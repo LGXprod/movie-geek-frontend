@@ -1,5 +1,6 @@
 @use "../sass-utils/variables" as *;
 @use "../sass-utils/classes" as *;
+@use "../sass-utils/mixins" as *;
 
 .movie-geek-info {
   width: 100%;
@@ -7,9 +8,80 @@
 
   & > div {
     @extend .content-width;
+    margin: 0 auto;
   }
 
   &:nth-child(2n+1) {
     background-color: $bgColor2;
+  }
+}
+
+.landing-section {
+  background-image: url("images/blob-bg.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  & > div {
+    @include center(row, center, center, 80px);
+
+    & > div:first-child {
+      div {
+        @include center(row, center, flex-start);
+  
+        h6 {
+          max-width: 300px;
+        }
+      }
+    }
+
+    // & > div:last-child {
+
+    // }
+  }
+}
+
+.ai-tech-section {
+  & > div {
+    h2 {
+      margin-bottom: 40px;
+
+      & > span:first-child {
+        color: $fgColor3;
+      }
+    }
+
+    & > div {
+      width: 85%;
+      margin: 0 auto;
+      @include center(row, flex-start, space-between);
+
+      & > div {
+        @include center(column, center, center);
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.stats-section {
+  .stats {
+    @include center(row, center, center, 160px);
+    margin-bottom: 60px;
+
+    h3 {
+      color: $fgColor3;
+    }
+
+    div {
+      @include center(column, center, center, 20px);
+    }
+  }
+
+  .logos {
+    @include center(row, center, center);
+    margin-top: 60px;
   }
 }
