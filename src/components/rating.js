@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./button";
 import StarActive from "../images/star-active.png";
 import StarInactive from "../images/star-inactive.png";
 
 const Rating = ({ id, ratings, setRating }) => {
-  const [ratingHovered, setRatingHover] = useState();
+  const [ratingHovered, setRatingHover] = useState(null);
   const [isSubmitted, setIsSumbitted] = useState(false);
+  const [isNotSeen, setIsNotSeen] = useState(false);
+
+  useEffect(() => {
+    if (isNotSeen) setRating(0);
+  }, [isNotSeen]);
 
   return (
-    <div class="rating">
+    <div className="rating">
       <div>
         {(() => {
           const starComponents = [];
@@ -16,17 +21,27 @@ const Rating = ({ id, ratings, setRating }) => {
           for (let i = 0; i <= 4; i++)
             starComponents.push(
               <img
+                key={i}
                 alt="star icon"
+                className={isNotSeen ? "not-seen" : ""}
                 src={
-                  !ratingHovered || ratingHovered < i
-                    ? StarInactive
-                    : StarActive
+                  isNotSeen ? (
+                    require("../images/star-inactive-2.png")
+                  ) : ratingHovered === null || ratingHovered < i ? (
+                    StarInactive
+                  ) : (
+                    StarActive
+                  )
                 }
-                onMouseOver={() => { if (!isSubmitted) setRatingHover(i); }}
-                onMouseLeave={() => { if (!isSubmitted) setRatingHover(null); }}
+                onMouseOver={() => {
+                  if (!isSubmitted) setRatingHover(i);
+                }}
+                onMouseLeave={() => {
+                  if (!isSubmitted) setRatingHover(null);
+                }}
                 onClick={() => {
                   setIsSumbitted(true);
-                  setRating({...ratings, [id]: i+1});
+                  setRating({ ...ratings, [id]: i + 1 });
                 }}
               />
             );
@@ -35,7 +50,10 @@ const Rating = ({ id, ratings, setRating }) => {
         })()}
       </div>
 
-      <Button label="Haven't Seen" />
+      <Button label="Haven't Seen" cb={() => {
+        setIsNotSeen(true);
+        setIsSumbitted(true);
+      }} />
     </div>
   );
 };
