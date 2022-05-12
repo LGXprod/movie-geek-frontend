@@ -1,13 +1,16 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/button";
+import DefaultLayout from "../layouts/defaultLayout";
 
 const Home = () => {
-  return (
-    <>
-      <Navbar />
+  let navigate = useNavigate();
+  const goToQuiz = () => {
+    navigate("/recommendation-quiz")
+  }
 
+  return (
+    <DefaultLayout>
       <div className="movie-geek-info landing-section">
         <div>
           <div>
@@ -29,9 +32,9 @@ const Home = () => {
               in mattis turpis elit ac augue.
             </p>
 
-            <div>
+            <div onClick={goToQuiz}>
               <h6>Get Started By Taking a Quick Recommendation Quiz</h6>
-              <Button />
+              <Button label="Take Quiz" />
             </div>
           </div>
 
@@ -173,9 +176,7 @@ const Home = () => {
           <h2>The Team</h2>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </DefaultLayout>
   );
 };
 

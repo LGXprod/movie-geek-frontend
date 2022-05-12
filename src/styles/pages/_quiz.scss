@@ -1,0 +1,35 @@
+@use "../sass-utils/variables" as *;
+@use "../sass-utils/classes" as *;
+@use "../sass-utils/mixins" as *;
+
+.quiz {
+  @extend .content-width;
+  margin: 0 auto;
+  padding: 60px 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  & > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 40px;
+  }
+}
+
+.rating {
+  @include center(row, center, center);
+  margin-top: 20px;
+
+  & > div:first-child {
+    @include center(row, center, center, 10px);
+  }
+
+  img {
+    height: 50px;
+    cursor: pointer;
+  }
+}

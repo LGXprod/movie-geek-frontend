@@ -1,0 +1,18 @@
+@use "../sass-utils/variables" as *;
+@use "../sass-utils/mixins" as *;
+
+.movie-modal {
+  height: 220px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: $mgColor;
+  @include center(column, flex-start, center, 10px);
+
+  & > h4:nth-child(2) {
+    word-wrap: break-word;
+  }
+
+  p {
+    margin: 0;
+  }
+}
