@@ -78,9 +78,16 @@ a:hover {
   color: #F26BDC;
 }
 
-.content-width, .quiz, .movie-geek-info > div, .footer > div, .nav-bar > div {
+.content-width, .movie-recommendations, .quiz, .movie-geek-info > div, .footer > div, .nav-bar > div {
   max-width: 1600px;
   padding: 0 60px;
+}
+
+.movie-grid, .movie-recommendations > div, .quiz > div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  gap: 40px;
 }
 
 .btn {
@@ -261,13 +268,6 @@ a:hover {
   text-align: center;
   margin-bottom: 40px;
 }
-.quiz > div {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 33%);
-  gap: 40px;
-}
-
 .rating {
   display: flex;
   flex-direction: row;
@@ -289,6 +289,15 @@ a:hover {
 }
 .rating .not-seen {
   opacity: 0.5;
+}
+
+.movie-recommendations {
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.movie-recommendations h1 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 /*# sourceMappingURL=styles.css.map */

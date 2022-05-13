@@ -2,3 +2,10 @@
   max-width: 1600px;
   padding: 0 60px;
 }
+
+.movie-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  gap: 40px;
+}

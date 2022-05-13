@@ -6,10 +6,10 @@ import StarInactive from "../images/star-inactive.png";
 const Rating = ({ id, ratings, setRating }) => {
   const [ratingHovered, setRatingHover] = useState(null);
   const [isSubmitted, setIsSumbitted] = useState(false);
-  const [isNotSeen, setIsNotSeen] = useState(false);
+  const [isNotSeen, setIsNotSeen] = useState(null);
 
   useEffect(() => {
-    if (isNotSeen) setRating(0);
+    if (isNotSeen) setRating({ ...ratings, [id]: 0 });
   }, [isNotSeen]);
 
   return (
@@ -41,6 +41,7 @@ const Rating = ({ id, ratings, setRating }) => {
                 }}
                 onClick={() => {
                   setIsSumbitted(true);
+                  console.log("ratings", ratings)
                   setRating({ ...ratings, [id]: i + 1 });
                 }}
               />
