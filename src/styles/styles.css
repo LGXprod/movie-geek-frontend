@@ -83,7 +83,7 @@ a:hover {
   padding: 0 60px;
 }
 
-.movie-grid, .movie-recommendations > div, .quiz > div {
+.movie-grid, .movie-recommendations > div, .quiz > div:not(.loading) {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 33%);
@@ -124,6 +124,19 @@ a:hover {
 }
 .movie-modal p {
   margin: 0;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  height: calc(100vh - 360px);
+}
+.loading img {
+  width: 300px;
 }
 
 .nav-bar {

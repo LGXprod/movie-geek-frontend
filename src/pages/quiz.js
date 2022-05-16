@@ -5,12 +5,14 @@ import postRecommendations from "../adapters/postRecommendations";
 import DefaultLayout from "../layouts/defaultLayout";
 import Rating from "../components/rating";
 import MovieModal from "../components/movieModal";
+import LoadingAnimation from "../images/loading-animation.svg";
 
 const Quiz = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState();
   const [movieRatings, setMovieRatings] = useState();
-  const [isLoadingRecommendations, setIsLoadingRecommendations] = useState(false);
+  const [isLoadingRecommendations, setIsLoadingRecommendations] =
+    useState(false);
 
   useEffect(() => {
     (async () => {
@@ -29,17 +31,17 @@ const Quiz = () => {
   useEffect(() => {
     if (movieRatings) {
       let isComplete = true;
-      console.log("m", movieRatings)
+      console.log("m", movieRatings);
 
       for (let movieId in movieRatings) {
-        console.log(movieId)
+        console.log(movieId);
         if (movieRatings[movieId] === null) {
           isComplete = false;
           break;
         }
       }
 
-      console.log("c", isComplete)
+      console.log("c", isComplete);
 
       if (isComplete) {
         (async () => {
@@ -47,7 +49,7 @@ const Quiz = () => {
           const movieRecommendations = await postRecommendations(movieRatings);
           setIsLoadingRecommendations(false);
           navigate("/recommendations", { state: movieRecommendations });
-        })()
+        })();
       }
     }
   }, [movieRatings]);
@@ -55,23 +57,32 @@ const Quiz = () => {
   return (
     <DefaultLayout>
       <div className="quiz">
-        <h2>Please rate the movies below:</h2>
-        {isLoadingRecommendations && <p>Loading recommendations...</p>}
-        <div>
-          {movies &&
-            movies.map(({ movieId, title, genres }, i) => {
-              return (
-                <div key={i}>
-                  <MovieModal title={title} genres={genres} />
-                  <Rating
-                    id={movieId}
-                    ratings={movieRatings}
-                    setRating={setMovieRatings}
-                  />
-                </div>
-              );
-            })}
-        </div>
+        {isLoadingRecommendations ? (
+          <div className="loading">
+            <img alt="loading animation" src={LoadingAnimation} />
+            <p>Generating Our Recommendations</p>
+          </div>
+        ) : (
+          <>
+            <h2>Please rate the movies below:</h2>
+
+            <div>
+              {movies &&
+                movies.map(({ movieId, title, genres }, i) => {
+                  return (
+                    <div key={i}>
+                      <MovieModal title={title} genres={genres} />
+                      <Rating
+                        id={movieId}
+                        ratings={movieRatings}
+                        setRating={setMovieRatings}
+                      />
+                    </div>
+                  );
+                })}
+            </div>
+          </>
+        )}
       </div>
     </DefaultLayout>
   );

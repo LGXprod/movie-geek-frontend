@@ -12,7 +12,7 @@
     margin-bottom: 40px;
   }
 
-  & > div {
+  & > div:not(.loading) {
     @extend .movie-grid;
   }
 }
