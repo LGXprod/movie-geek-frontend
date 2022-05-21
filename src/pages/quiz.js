@@ -19,6 +19,8 @@ const Quiz = () => {
       const movies = await getQuiz();
       const movieRatings = {};
 
+      console.log("movies", movies);
+
       for (let { movieId } of movies) {
         movieRatings[movieId] = null;
       }
@@ -68,10 +70,16 @@ const Quiz = () => {
 
             <div>
               {movies &&
-                movies.map(({ movieId, title, genres }, i) => {
+                movies.map(({ movieId, title, genres, tags, imdbId, tmdbId }, i) => {
                   return (
                     <div key={i}>
-                      <MovieModal title={title} genres={genres} />
+                      <MovieModal
+                        title={title}
+                        genres={genres.join(", ")}
+                        tags={tags.join(", ")}
+                        imdbId={imdbId}
+                        tmdbId={tmdbId}
+                      />
                       <Rating
                         id={movieId}
                         ratings={movieRatings}

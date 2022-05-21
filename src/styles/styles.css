@@ -109,18 +109,58 @@ a:hover {
 }
 
 .movie-modal {
-  height: 220px;
-  padding: 20px;
+  height: 285px;
+  padding: 25px;
   border-radius: 10px;
   background-color: #262559;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.movie-modal .recommendation-tags-container {
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
 }
-.movie-modal > h4:nth-child(2) {
-  word-wrap: break-word;
+.movie-modal .recommendation-tag {
+  padding: 10px;
+  border-radius: 5px;
+}
+.movie-modal .recommendation-tag label {
+  text-align: center;
+  margin: 0 auto;
+  text-transform: capitalize;
+}
+.movie-modal .recommendation-tag.latent-factor-model {
+  background-color: #FF865E;
+}
+.movie-modal .recommendation-tag.similar-tag {
+  background-color: #64C9CF;
+}
+.movie-modal .recommendation-tag.similar-genre {
+  background-color: #F08FC0;
+}
+.movie-modal .movie-db-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.movie-modal .movie-db-links div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.movie-modal .movie-db-links img {
+  width: 80px;
 }
 .movie-modal p {
   margin: 0;

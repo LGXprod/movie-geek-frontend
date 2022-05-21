@@ -14,11 +14,21 @@ const Recommendations = () => {
 
         <div>
           {movieRecommendations &&
-            movieRecommendations.map(({ title, genres }, i) => {
-              return (
-                <MovieModal title={title} genres={genres} />
-              );
-            })}
+            movieRecommendations.map(
+              ({ title, genres, recType, tags, imdbId, tmdbId }, i) => {
+                return (
+                  <MovieModal
+                    key={i}
+                    title={title}
+                    genres={genres.join(", ")}
+                    recTypes={recType}
+                    tags={tags.join(", ")}
+                    imdbId={imdbId}
+                    tmdbId={tmdbId}
+                  />
+                );
+              }
+            )}
         </div>
       </div>
     </DefaultLayout>

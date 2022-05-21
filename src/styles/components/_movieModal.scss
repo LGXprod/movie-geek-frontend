@@ -2,14 +2,50 @@
 @use "../sass-utils/mixins" as *;
 
 .movie-modal {
-  height: 220px;
-  padding: 20px;
+  height: 285px;
+  padding: 25px;
   border-radius: 10px;
   background-color: $mgColor;
-  @include center(column, flex-start, center, 10px);
+  overflow-y: auto;
+  @include center(column, flex-start, space-between, 10px);
 
-  & > h4:nth-child(2) {
-    word-wrap: break-word;
+  .recommendation-tags-container {
+    @include center(row, flex-start, center, 10px);
+  }
+
+  .recommendation-tag {
+    padding: 10px;
+    border-radius: 5px;
+
+    label {
+      text-align: center;
+      margin: 0 auto;
+      text-transform: capitalize;
+    }
+  }
+
+  .recommendation-tag.latent-factor-model {
+    background-color: #FF865E;
+  }
+
+  .recommendation-tag.similar-tag {
+    background-color: #64C9CF;
+  }
+
+  .recommendation-tag.similar-genre {
+    background-color: #F08FC0;
+  }
+
+  .movie-db-links {
+    @include center(row, center, center, 20px);
+
+    div {
+      @include center(row, center, center, 10px);
+    }
+
+    img {
+      width: 80px;
+    }
   }
 
   p {

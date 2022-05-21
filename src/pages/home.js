@@ -6,8 +6,8 @@ import DefaultLayout from "../layouts/defaultLayout";
 const Home = () => {
   let navigate = useNavigate();
   const goToQuiz = () => {
-    navigate("/recommendation-quiz")
-  }
+    navigate("/recommendation-quiz");
+  };
 
   return (
     <DefaultLayout>
@@ -17,19 +17,18 @@ const Home = () => {
             <h1>MovieGeek</h1>
             <h2>Your AI film nerd friend</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lorem quis elit volutpat, sed consequat diam
-              eleifend. Nam laoreet felis commodo dictum volutpat. Etiam sit
-              amet mauris vel metus luctus eleifend a vel lorem. Sed ac posuere
-              tortor, sed mollis sapien. Suspendisse ultricies tempus sem, vel
-              luctus justo mollis vel. Vivamus gravida fringilla eros eget
-              elementum. Duis ullamcorper enim ac arcu ullamcorper, sit amet
-              mattis eros porta. Fusce sit amet nunc sed massa blandit dictum.
-              Mauris non enim nisi. Donec nec consectetur urna. Proin faucibus
-              mattis augue, eget luctus lacus ornare vel. Sed nibh lectus,
-              dignissim sit amet turpis ac, scelerisque luctus tortor. Nam
-              finibus, ante tempus pulvinar laoreet, tortor mi efficitur odio,
-              in mattis turpis elit ac augue.
+              Tired of endlessly scrolling through Netflix, Disney Plus or any
+              of the other dozen streaming services? We at Movie geek believe
+              that movie-time should be relaxing time and as such have created a
+              super advanced AI model to give you some amazing recommendations.
+              Recommendations are not only based on the similarity of movies
+              like other services but also by comparing the 0-5 star ratings you
+              give compared to our 20 million plus users!
+            </p>
+
+            <p>
+              Give our recommendations a try by clicking the button below, we
+              are sure you will love it!
             </p>
 
             <div onClick={goToQuiz}>
@@ -44,7 +43,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="movie-geek-info ai-tech-section">
+      <div id="ai-tech" className="movie-geek-info ai-tech-section">
         <div>
           <h2>
             <span>State of the Art</span> AI Tech
@@ -58,15 +57,15 @@ const Home = () => {
               />
               <h4>Movie Graph Network</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lorem quis elit volutpat, sed consequat
-                diam eleifend. Nam laoreet felis commodo dictum volutpat. Etiam
-                sit amet mauris vel metus luctus eleifend a vel lorem. Sed ac
-                posuere tortor, sed mollis sapien. Suspendisse ultricies tempus
-                sem, vel luctus justo mollis vel. Vivamus gravida fringilla eros
-                eget elementum. Duis ullamcorper enim ac arcu ullamcorper, sit
-                amet mattis eros porta. Fusce sit amet nunc sed massa blandit
-                dictum.
+                Movie Geek uses a graph database technology called Neo4j to
+                generate some of our recommendations. This graph database
+                enables us to connect our highly related data; such as our
+                movies, genres and tags. More importantly, Neo4j in combination
+                with the industry standard query language, Cypher, allows us to
+                build our graph based algorithms (mainly our 2-hop ensemble
+                algorithm). It also enables us to visualize the database through
+                our DBMS and his and will continue to drive our database
+                decisions.
               </p>
             </div>
 
@@ -76,17 +75,15 @@ const Home = () => {
                 style={{ height: "225px" }}
                 src={require("../images/latent-model.png")}
               />
-              <h4>Latent Feature Model</h4>
+              <h4>Latent Factor Model</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lorem quis elit volutpat, sed consequat
-                diam eleifend. Nam laoreet felis commodo dictum volutpat. Etiam
-                sit amet mauris vel metus luctus eleifend a vel lorem. Sed ac
-                posuere tortor, sed mollis sapien. Suspendisse ultricies tempus
-                sem, vel luctus justo mollis vel. Vivamus gravida fringilla eros
-                eget elementum. Duis ullamcorper enim ac arcu ullamcorper, sit
-                amet mattis eros porta. Fusce sit amet nunc sed massa blandit
-                dictum.
+                Our Latent Factor Model took many hours to train and gives us an
+                incredible edge in terms of our accuracy of predictions.
+                Essentially, we took our huge database of user ratings,
+                transformed it into a matrix of users and movies, and then the
+                tricky part, used machine learning to predict the ratings of
+                movies that each user hadn’t rated. Many companies, most notably
+                Netflix, use this type of Collaborative filtering.
               </p>
             </div>
 
@@ -97,31 +94,30 @@ const Home = () => {
               />
               <h4>Movie Graph Network</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lorem quis elit volutpat, sed consequat
-                diam eleifend. Nam laoreet felis commodo dictum volutpat. Etiam
-                sit amet mauris vel metus luctus eleifend a vel lorem. Sed ac
-                posuere tortor, sed mollis sapien. Suspendisse ultricies tempus
-                sem, vel luctus justo mollis vel. Vivamus gravida fringilla eros
-                eget elementum. Duis ullamcorper enim ac arcu ullamcorper, sit
-                amet mattis eros porta. Fusce sit amet nunc sed massa blandit
-                dictum.
+                The advanced Latent Factor AI model used to generate many of the
+                recommendations we give to users, is powered by Google’s
+                open-source Machine Learning library and framework; Tensorflow.
+                Not only does it handle the matrix multiplication used in the
+                Latent Factor Model, it also enables us to take advantage of our
+                RTX 3060 to speed up training, as Tensorflow is GPU accelerated.
+                Nerd talk behind us, essentially Tensorflow allows us to stand
+                on the shoulders of giants, and utilize optimizers ML processes.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="movie-geek-info stats-section">
+      <div id="our-data" className="movie-geek-info stats-section">
         <div>
           <div className="stats">
             <div>
-              <h3>XX%</h3>
-              <h4>Accuracy Statistic</h4>
+              <h3>100%</h3>
+              <h4>Link Coverage</h4>
             </div>
 
             <div>
-              <h2>20,000,000</h2>
+              <h2>20,000,000+</h2>
               <h4>User ratings</h4>
             </div>
 
@@ -132,33 +128,19 @@ const Home = () => {
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lorem quis elit volutpat, sed consequat diam eleifend. Nam
-            laoreet felis commodo dictum volutpat. Etiam sit amet mauris vel
-            metus luctus eleifend a vel lorem. Sed ac posuere tortor, sed mollis
-            sapien. Suspendisse ultricies tempus sem, vel luctus justo mollis
-            vel. Vivamus gravida fringilla eros eget elementum. Duis ullamcorper
-            enim ac arcu ullamcorper, sit amet mattis eros porta. Fusce sit amet
-            nunc sed massa blandit dictum. Mauris non enim nisi. Donec nec
-            consectetur urna. Proin faucibus mattis augue, eget luctus lacus
-            ornare vel. Sed nibh lectus, dignissim sit amet turpis ac,
-            scelerisque luctus tortor. Nam finibus, ante tempus pulvinar
-            laoreet, tortor mi efficitur odio, in mattis turpis elit ac augue.
-            Aliquam sed ligula iaculis sem molestie auctor. Praesent placerat
-            fringilla lorem, et euismod libero blandit vel. Pellentesque
-            posuere, lectus et interdum finibus, odio ante vehicula lectus, id
-            scelerisque turpis massa eget orci. Duis at est pharetra, lacinia
-            enim vel, gravida metus. Aliquam ut dui scelerisque, consectetur
-            elit non, sollicitudin mi. Suspendisse ullamcorper vestibulum erat,
-            a lobortis lorem congue id. Suspendisse eu varius tellus.
-            Suspendisse sed vulputate ante, vitae condimentum sapien. Vestibulum
-            id lorem fringilla, tempus nibh eget, maximus sapien. Nulla
-            consequat ornare arcu, quis tempor lorem. Nam ac nulla sodales orci
-            ultrices cursus id et augue. Sed nec diam vitae ligula porttitor
-            condimentum. In vitae tincidunt tortor. Praesent eu justo libero. In
-            iaculis, odio id porta sagittis, dui nisl blandit nunc, in congue
-            nisl lectus quis erat. In sagittis enim bibendum ante blandit, in
-            aliquam neque pharetra.
+            This dataset we used to create our database, algorithms and AI
+            models, (ml-20m) describes 5-star rating and free-text tagging
+            activity from [MovieLens](http://movielens.org), a movie
+            recommendation service. It contains 20000263 ratings and 465564 tag
+            applications across 27278 movies. These data were created by 138493
+            users between January 09, 1995 and March 31, 2015. This dataset was
+            generated on March 31, 2015, and updated on October 17, 2016 to
+            update links.csv and add genome-* files. The Developers and Data
+            Scientists of Movie Geek did further data cleaning and preprocessing
+            so that it could empower our needs and give you the best
+            recommendations. <br />
+            <br /> The original dataset was created by researchers at the
+            University of Minnesota and graciously made available to the public.
           </p>
 
           <div className="logos">
@@ -168,12 +150,6 @@ const Home = () => {
               src={require("../images/minnesota-uni-logo.png")}
             />
           </div>
-        </div>
-      </div>
-
-      <div className="movie-geek-info">
-        <div>
-          <h2>The Team</h2>
         </div>
       </div>
     </DefaultLayout>
